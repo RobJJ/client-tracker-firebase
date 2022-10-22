@@ -1,9 +1,10 @@
 const data = [
   {
-    value: "Rob Johnsen",
-    label: "Rob Johnsen",
     name: "Rob Johnsen",
-    age: 31,
+    email: "rob@robbo.com",
+    contact: "0882321122",
+    receipts: { debits: [], credits: [] },
+    balance: 0,
     id: "1",
     notes: [
       "strong",
@@ -12,10 +13,8 @@ const data = [
     ],
   },
   {
-    value: "Tom Hooterpoop",
-    label: "Tom Hooterpoop",
     name: "Tom Hooterpoop",
-    age: 21,
+    receipts: { debits: [], credits: [] },
     id: "2",
     notes: [
       "weak",
@@ -24,10 +23,8 @@ const data = [
     ],
   },
   {
-    value: "Craig Dooapoop",
-    label: "Craig Dooapoop",
     name: "Craig Dooapoop",
-    age: 44,
+    balance: 0,
     id: "3",
     notes: [
       "strong in certain positions and blah blah blah",
@@ -37,3 +34,14 @@ const data = [
   },
 ];
 export default data;
+
+// const clientTemplate = {
+//   name: "", /
+//   email: "", /
+//   contact: "", /
+//   id: "", /
+//   active: false,
+//   notes: [],
+//   receipts: { debits: [], credits: [] },
+//   balance: 0,
+// };

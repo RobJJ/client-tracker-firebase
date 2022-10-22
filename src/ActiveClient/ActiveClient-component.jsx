@@ -2,9 +2,7 @@ import React from "react";
 import { useParams, Outlet } from "react-router-dom";
 import data from "../ClientData/ClientData-component";
 import BasicInfo from "./ActiveClientBasicInfo-component";
-import ComplexInfo from "./ActiveClientComplexInfo-component";
 import ComplexFooter from "./ComplexFooter-component";
-import ComplexLayout from "./ComplexLayout";
 import ComplexNav from "./ComplexNav-component";
 //
 const ActiveClient = () => {
@@ -25,5 +23,3 @@ const ActiveClient = () => {
   );
 };
 export default ActiveClient;
-
-//<ComplexLayout client={client} />
