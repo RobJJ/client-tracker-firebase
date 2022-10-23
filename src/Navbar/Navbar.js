@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 //
 const NAVBAR = () => {
   return (
-    <div className="bg-white w-full h-20 flex gap-2">
+    <div className="bg-white w-full h-20 shrink-0 flex gap-2">
       <Link
         to="addClient"
         className="flex justify-center items-center w-1/2 h-full bg-pink-200 underline"

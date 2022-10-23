@@ -17,7 +17,7 @@ const ClientList = () => {
 
   // };
   return (
-    <div className="bg-white w-full h-full flex flex-col gap-1">
+    <div className="bg-orange-300 overflow-auto w-full h-full flex flex-col gap-2 p-2">
       <div className="bg-green-500 h-10 mt-1 p-1">
         <input
           type="search"
@@ -29,19 +29,20 @@ const ClientList = () => {
           }}
         />
       </div>
-      <div className="flex flex-col gap-1">
-        {filteredClients.map((client) => {
-          return (
-            <Link
-              key={client.id}
-              to={`/clientList/${client.id}`}
-              className="w-full h-10 bg-green-200 flex justify-around items-center"
-            >
-              <h2>{client.name}</h2>
-              <p>{client.age}</p>
-            </Link>
-          );
-        })}
+      <div className=" overflow-auto h-full">
+        <div className="flex flex-col gap-1">
+          {filteredClients.map((client) => {
+            return (
+              <Link
+                key={client.id}
+                to={`/clientList/${client.id}`}
+                className="w-full h-10 bg-green-200 flex justify-around items-center rounded-lg"
+              >
+                <h2>{client.name}</h2>
+              </Link>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

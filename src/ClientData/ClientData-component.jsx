@@ -32,6 +32,146 @@ const data = [
       "has tried to do this exercise for a few weeks buts is struggling to complete it",
     ],
   },
+  {
+    name: "Craig Dooapoop",
+    balance: 0,
+    id: "3",
+    notes: [
+      "strong in certain positions and blah blah blah",
+      "displays a good understanind of the way to help the customer and things",
+      "has tried to do this exercise for a few weeks buts is struggling to complete it",
+    ],
+  },
+  {
+    name: "Craig Dooapoop",
+    balance: 0,
+    id: "3",
+    notes: [
+      "strong in certain positions and blah blah blah",
+      "displays a good understanind of the way to help the customer and things",
+      "has tried to do this exercise for a few weeks buts is struggling to complete it",
+    ],
+  },
+  {
+    name: "Craig Dooapoop",
+    balance: 0,
+    id: "3",
+    notes: [
+      "strong in certain positions and blah blah blah",
+      "displays a good understanind of the way to help the customer and things",
+      "has tried to do this exercise for a few weeks buts is struggling to complete it",
+    ],
+  },
+  {
+    name: "Craig Dooapoop",
+    balance: 0,
+    id: "3",
+    notes: [
+      "strong in certain positions and blah blah blah",
+      "displays a good understanind of the way to help the customer and things",
+      "has tried to do this exercise for a few weeks buts is struggling to complete it",
+    ],
+  },
+  {
+    name: "Craig Dooapoop",
+    balance: 0,
+    id: "3",
+    notes: [
+      "strong in certain positions and blah blah blah",
+      "displays a good understanind of the way to help the customer and things",
+      "has tried to do this exercise for a few weeks buts is struggling to complete it",
+    ],
+  },
+  {
+    name: "Craig Dooapoop",
+    balance: 0,
+    id: "3",
+    notes: [
+      "strong in certain positions and blah blah blah",
+      "displays a good understanind of the way to help the customer and things",
+      "has tried to do this exercise for a few weeks buts is struggling to complete it",
+    ],
+  },
+  {
+    name: "Craig Dooapoop",
+    balance: 0,
+    id: "3",
+    notes: [
+      "strong in certain positions and blah blah blah",
+      "displays a good understanind of the way to help the customer and things",
+      "has tried to do this exercise for a few weeks buts is struggling to complete it",
+    ],
+  },
+  {
+    name: "Craig Dooapoop",
+    balance: 0,
+    id: "3",
+    notes: [
+      "strong in certain positions and blah blah blah",
+      "displays a good understanind of the way to help the customer and things",
+      "has tried to do this exercise for a few weeks buts is struggling to complete it",
+    ],
+  },
+  {
+    name: "Craig Dooapoop",
+    balance: 0,
+    id: "3",
+    notes: [
+      "strong in certain positions and blah blah blah",
+      "displays a good understanind of the way to help the customer and things",
+      "has tried to do this exercise for a few weeks buts is struggling to complete it",
+    ],
+  },
+  {
+    name: "Craig Dooapoop",
+    balance: 0,
+    id: "3",
+    notes: [
+      "strong in certain positions and blah blah blah",
+      "displays a good understanind of the way to help the customer and things",
+      "has tried to do this exercise for a few weeks buts is struggling to complete it",
+    ],
+  },
+  {
+    name: "Craig Dooapoop",
+    balance: 0,
+    id: "3",
+    notes: [
+      "strong in certain positions and blah blah blah",
+      "displays a good understanind of the way to help the customer and things",
+      "has tried to do this exercise for a few weeks buts is struggling to complete it",
+    ],
+  },
+  // {
+  //   name: "Craig Dooapoop",
+  //   balance: 0,
+  //   id: "3",
+  //   notes: [
+  //     "strong in certain positions and blah blah blah",
+  //     "displays a good understanind of the way to help the customer and things",
+  //     "has tried to do this exercise for a few weeks buts is struggling to complete it",
+  //   ],
+  // },
+  // {
+  //   name: "Craig Dooapoop",
+  //   balance: 0,
+  //   id: "3",
+  //   notes: [
+  //     "strong in certain positions and blah blah blah",
+  //     "displays a good understanind of the way to help the customer and things",
+  //     "has tried to do this exercise for a few weeks buts is struggling to complete it",
+  //   ],
+  // },
+  // {
+  //   name: "Craig Dooapoop",
+  //   balance: 0,
+  //   id: "3",
+  //   notes: [
+  //     "strong in certain positions and blah blah blah",
+  //     "displays a good understanind of the way to help the customer and things",
+  //     "has tried to do this exercise for a few weeks buts is struggling to complete it",
+  //   ],
+  // },
 ];
 export default data;
 

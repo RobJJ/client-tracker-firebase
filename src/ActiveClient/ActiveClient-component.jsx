@@ -12,7 +12,7 @@ const ActiveClient = () => {
   const client = data.find((client) => client.id === clientId);
   //
   return (
-    <div className="bg-white w-full h-full flex flex-col">
+    <div className="bg-white w-full h-full flex flex-col p-2 overflow-auto">
       {/* BASIC INFO SECTION */}
       <BasicInfo client={client} />
       {/* COMPLEX INFO SECTION */}
