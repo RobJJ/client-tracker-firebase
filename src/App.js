@@ -6,7 +6,7 @@ import AddClient from "./AddClient/AddClient-component";
 import Home from "./Home/Home-component";
 import ActiveClient from "./ActiveClient/ActiveClient-component";
 import ActiveClientNotes from "./ActiveClient/ActiveClientNotes-component";
-import DefaultActiveDisplay from "./ActiveClient/DefaultActiveDisplay-component";
+// import DefaultActiveDisplay from "./ActiveClient/DefaultActiveDisplay-component";
 import ActiveClientReceipts from "./ActiveClient/ActiveClientReceipts-component";
 import ActiveClientDebit from "./ActiveClient/ActiveClientDebit-component";
 import ActiveClientCredit from "./ActiveClient/ActiveClientCredit-component";

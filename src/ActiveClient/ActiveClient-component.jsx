@@ -1,24 +1,23 @@
 import React from "react";
 import { useParams, Outlet } from "react-router-dom";
-import data from "../ClientData/ClientData-component";
+import { useGlobalContext } from "../Context-Reducer/Context";
+// import data from "../ClientData/ClientData-component";
+import { clientData } from "../Data/ClientData";
 import BasicInfo from "./ActiveClientBasicInfo-component";
 import ComplexFooter from "./ComplexFooter-component";
 import ComplexNav from "./ComplexNav-component";
 //
 const ActiveClient = () => {
-  //
-  const { clientId } = useParams();
-  // Find the client based off the url param id
-  const client = data.find((client) => client.id === clientId);
+  // is rendering correctly
+
   //
   return (
-    <div className="bg-white w-full h-full flex flex-col p-2 overflow-auto">
+    <div className="bg-white w-full h-full flex flex-col p-1 overflow-auto">
       {/* BASIC INFO SECTION */}
-      <BasicInfo client={client} />
+      <BasicInfo />
       {/* COMPLEX INFO SECTION */}
-      <ComplexNav client={client} />
-      <Outlet context={client} />
-      <ComplexFooter />
+      <ComplexNav />
+      <Outlet />
     </div>
   );
 };

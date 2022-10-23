@@ -1,9 +1,12 @@
 import React from "react";
 import { useOutletContext } from "react-router-dom";
+import { useGlobalContext } from "../Context-Reducer/Context";
 //
 const ActiveClientDebit = () => {
-  const client = useOutletContext();
+  // const client = useOutletContext();
   //   console.log(client);
+  const { debitInfo, setDebitInfo, focused, addDebitToClient } =
+    useGlobalContext();
   //
   return (
     <div className="bg-purple-100 w-full h-full">
@@ -15,13 +18,24 @@ const ActiveClientDebit = () => {
         {/* MAIN PAGE DISPLAY */}
         <div className="bg-purple-300 h-full w-full flex p-2 gap-2">
           {/* LEFT HAND SIDE DISPLAY */}
-          <div className="w-full border flex flex-col gap-1  p-1">
+          <form
+            className="w-full border flex flex-col gap-1  p-1"
+            onSubmit={addDebitToClient}
+          >
             <div className="h-1/3 bg-purple-100 flex flex-col text-center text-lg">
               <label className="h-1/2 underline pt-2 text-xl">
                 Payment Date:
               </label>
               <div className=" h-1/2">
-                <input type="date" className=" text-center p-1 rounded-lg" />
+                <input
+                  required
+                  type="date"
+                  className=" text-center p-1 rounded-lg"
+                  value={debitInfo.date}
+                  onChange={(e) =>
+                    setDebitInfo({ ...debitInfo, date: e.target.value })
+                  }
+                />
               </div>
             </div>
             <div className="h-1/3 bg-purple-100 flex flex-col text-center text-lg">
@@ -30,9 +44,14 @@ const ActiveClientDebit = () => {
               </label>
               <div className="h-1/2">
                 <input
-                  type="number"
+                  required
+                  type="text"
                   className=" text-center p-1 rounded-lg"
                   placeholder="720 usd"
+                  value={debitInfo.amount}
+                  onChange={(e) =>
+                    setDebitInfo({ ...debitInfo, amount: e.target.value })
+                  }
                 />
               </div>
             </div>
@@ -42,13 +61,22 @@ const ActiveClientDebit = () => {
               </label>
               <div className="  h-1/2">
                 <input
+                  required
                   type="number"
                   className=" text-center p-1 rounded-lg w-1/3 text-xl"
+                  value={debitInfo.sessions}
+                  onChange={(e) =>
+                    setDebitInfo({ ...debitInfo, sessions: e.target.value })
+                  }
                 />
               </div>
             </div>
-          </div>
-          {/* RIGHT HAND SIDE DISPLAY */}
+            <div className="text-center w-full">
+              <button type="submit" className="bg-white p-2 rounded-xl ">
+                Debit Client
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </div>

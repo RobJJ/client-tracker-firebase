@@ -1,15 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { Link, Outlet } from "react-router-dom";
-import data from "../ClientData/ClientData-component";
-// import Select from "react-select";
+// import data from "../ClientData/ClientData-component";
+import { clientData } from "../Data/ClientData";
+import { useGlobalContext } from "../Context-Reducer/Context";
 //
 const ClientList = () => {
   //
-  const [filteredClients, setFilteredClients] = useState(data);
+  const { clients, dispatch, listReceipts } = useGlobalContext();
+  // console.log(clients);
+  //
+  const [filteredClients, setFilteredClients] = useState(clients);
   const [searchedLetters, setSearchedLetters] = useState("");
   //
   useEffect(() => {
-    const filter = data.filter((client) =>
+    const filter = clients.filter((client) =>
       client.name.toLowerCase().includes(searchedLetters.toLowerCase())
     );
     setFilteredClients(filter);
@@ -35,7 +39,10 @@ const ClientList = () => {
             return (
               <Link
                 key={client.id}
-                to={`/clientList/${client.id}`}
+                onClick={() =>
+                  dispatch({ type: "CAMS_MAGIC", payload: client })
+                }
+                to={`/clientList/${client.uniqueClient}`}
                 className="w-full h-10 bg-green-200 flex justify-around items-center rounded-lg"
               >
                 <h2>{client.name}</h2>

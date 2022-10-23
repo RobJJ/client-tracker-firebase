@@ -1,73 +1,14 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useOutletContext, Link } from "react-router-dom";
+import { useGlobalContext } from "../Context-Reducer/Context";
 //
 const dummyData = [
-  {
-    date: "2022-10-22",
-    id: "qweqw",
-    amount: "322",
-    sessions: 5,
-  },
-  {
-    date: "2022-09-15",
-    id: "gqwe",
-    amount: "550",
-    sessions: 10,
-  },
-  {
-    date: "2022-09-15",
-    id: "gqwe",
-    amount: "550",
-    sessions: 10,
-  },
-  {
-    date: "2022-09-15",
-    id: "gqwe",
-    amount: "550",
-    sessions: 10,
-  },
-  {
-    date: "2022-09-15",
-    id: "gqwe",
-    amount: "550",
-    sessions: 10,
-  },
-  {
-    date: "2022-09-15",
-    id: "gqwe",
-    amount: "550",
-    sessions: 10,
-  },
-  {
-    date: "2022-09-15",
-    id: "gqwe",
-    amount: "550",
-    sessions: 10,
-  },
-  {
-    date: "2022-09-15",
-    id: "gqwe",
-    amount: "550",
-    sessions: 10,
-  },
-  {
-    date: "2022-09-15",
-    id: "gqwe",
-    amount: "550",
-    sessions: 10,
-  },
-  {
-    date: "2022-09-15",
-    id: "gqwe",
-    amount: "550",
-    sessions: 10,
-  },
-  {
-    date: "2022-09-15",
-    id: "gqwe",
-    amount: "550",
-    sessions: 10,
-  },
+  // {
+  //   date: "2022-10-22",
+  //   id: "qweqw",
+  //   amount: "322",
+  //   sessions: 5,
+  // },
   // {
   //   date: "2022-09-15",
   //   id: "gqwe",
@@ -77,8 +18,26 @@ const dummyData = [
 ];
 
 const ActiveClientReceipts = () => {
-  const client = useOutletContext();
+  // const client = useOutletContext();
   //   console.log(client);
+  const { focused } = useGlobalContext();
+  const [orderedReceipts, setOrderedReceipts] = useState([]);
+  //
+  useEffect(() => {
+    if (Object.keys(focused).length === 0) return;
+    //
+    let tempArr = [];
+    focused.receipts.debits.forEach((debit) => tempArr.push(debit));
+    focused.receipts.credits.forEach((credit) => tempArr.push(credit));
+    //
+    tempArr.sort(
+      (b, a) =>
+        new Date(a.date.split("/").reverse()) -
+        new Date(b.date.split("/").reverse())
+    );
+    setOrderedReceipts(tempArr);
+  }, [focused]);
+
   //
   return (
     <div className="bg-blue-100 w-full h-full overflow-auto flex flex-col gap-2">
@@ -90,18 +49,21 @@ const ActiveClientReceipts = () => {
       </div>
       <div className="h-full w-full border border-black overflow-auto">
         <div className="flex flex-col gap-1">
-          {dummyData.map((debit) => {
-            return (
-              <div
-                key={debit.id}
-                className="w-full h-10 bg-green-200 flex text-center rounded-xl  items-center"
-              >
-                <span className="w-1/3">{debit.date}</span>
-                <span className="w-1/3">{debit.amount}</span>
-                <span className="w-1/3">{debit.sessions}</span>
-              </div>
-            );
-          })}
+          {orderedReceipts &&
+            orderedReceipts.map((debit) => {
+              return (
+                <div
+                  key={debit.id}
+                  className={`w-full h-10  flex text-center rounded-xl  items-center ${
+                    debit.amount ? "bg-green-200" : "bg-yellow-200"
+                  }`}
+                >
+                  <span className="w-1/3">{debit.date}</span>
+                  <span className="w-1/3">{debit.amount}</span>
+                  <span className="w-1/3">{debit.sessions}</span>
+                </div>
+              );
+            })}
         </div>
       </div>
       {/*</div>*/}
