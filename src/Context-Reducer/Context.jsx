@@ -1,4 +1,10 @@
-import React, { useContext, useState, useReducer, useEffect } from "react";
+import React, {
+  useContext,
+  useState,
+  useReducer,
+  useEffect,
+  useRef,
+} from "react";
 import reducer from "./Reducer";
 import { clientData } from "../Data/ClientData";
 
@@ -45,11 +51,14 @@ const AppProvider = ({ children }) => {
   const [debitInfo, setDebitInfo] = useState(debitTemplate);
   const [creditInfo, setCreditInfo] = useState(creditTemplate);
   const [updatedNotes, setUpdatedNotes] = useState("");
+  //
+  const ref = useRef();
   // Functions to handle state actions -
   //
   // To add a new Client
   const submitNewClient = (e) => {
     e.preventDefault();
+    dispatch({ type: "TESTING", payload: ref });
     dispatch({ type: "SUBMIT", payload: newClientInfo });
     setNewClientInfo(clientTemplate);
   };
@@ -101,6 +110,7 @@ const AppProvider = ({ children }) => {
         updatedNotes,
         setUpdatedNotes,
         handleNoteChange,
+        ref,
       }}
     >
       {children}

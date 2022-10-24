@@ -19,4 +19,3 @@ const Home = () => {
 
 export default Home;
 //
-//<img src={logo} alt="Mai Method Logo" className="h-full " />

@@ -101,6 +101,17 @@ const reducer = (state, action) => {
     };
   }
   //
+  if (action.type === "TESTING") {
+    // console.log("working here");
+
+    action.payload.current.classList.remove("hidden");
+    setTimeout(() => {
+      action.payload.current.classList.add("hidden");
+    }, 3000);
+    // console.log(action.payload.current.classList.remove("hidden"));
+    // action.payload.current.innerHTML = "POOP";
+  }
+  //
 
   return state;
 };

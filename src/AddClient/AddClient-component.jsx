@@ -81,18 +81,3 @@ const AddClient = () => {
 };
 
 export default AddClient;
-
-// <form className=" bg-blue-500 h-full w-full flex flex-col p-2 gap-2">
-//   <div className="flex bg-blue-300">
-//     <label>Name: </label>
-//     <input type="text" />
-//   </div>
-//   <div className="flex bg-blue-300">
-//     <label>Email: </label>
-//     <input type="text" />
-//   </div>
-//   <div className="flex bg-blue-300">
-//     <label>Notes: </label>
-//     <input type="text" />
-//   </div>
-// </form>;
