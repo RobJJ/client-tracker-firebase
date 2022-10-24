@@ -1,6 +1,9 @@
 import React from "react";
 import { useGlobalContext } from "../Context-Reducer/Context";
 //
+// ABB7BC - gray -bg-[#ABB7BC]
+// F88074 - Orange - bg-[#F88074]
+// A55A42 - BRown (extra)
 //
 const AddClient = () => {
   // Actions grabbed from context
@@ -9,28 +12,28 @@ const AddClient = () => {
   //
   return (
     <div className="bg-white w-full h-full p-2 flex justify-center">
-      <div className="bg-blue-500 w-[400px] h-[450px] mt-16 p-2 flex justify-center items-center">
+      <div className="border-4 border-black w-[450px] h-[450px] mt-16 p-2 flex justify-center items-center rounded-xl">
         <form
-          className="bg-blue-300 w-full h-full flex flex-col justify-around"
+          className=" w-full h-full flex flex-col justify-around bg-[#F88074] rounded-xl"
           onSubmit={submitNewClient}
         >
-          <div className="bg-blue-100 p-2 w-full flex items-center gap-3">
-            <label className="underline w-1/4 text-center">Name: </label>
+          <div className=" p-2 w-full flex items-center gap-3 rounded-xl">
             <input
               type="text"
-              className="p-1 rounded w-full"
+              className="p-2 px-3 rounded-lg w-full border-2 border-black"
               required
+              placeholder="Client Name"
               value={newClientInfo.name}
               onChange={(e) =>
                 setNewClientInfo({ ...newClientInfo, name: e.target.value })
               }
             />
           </div>
-          <div className="bg-blue-100 p-2 w-full flex items-center gap-3">
-            <label className="underline w-1/4 text-center">Email: </label>
+          <div className=" p-2 w-full flex items-center gap-3  rounded-xl">
             <input
               type="email"
-              className="p-1 rounded w-full"
+              className="p-2 px-3 rounded-lg w-full border-2 border-black"
+              placeholder="Client Email"
               required
               value={newClientInfo.email}
               onChange={(e) =>
@@ -38,11 +41,11 @@ const AddClient = () => {
               }
             />
           </div>
-          <div className="bg-blue-100 p-2 w-full flex items-center gap-3">
-            <label className="underline w-1/4 text-center">Contact: </label>
+          <div className=" p-2 w-full flex items-center gap-3  rounded-xl">
             <input
               type="text"
-              className="p-1 rounded w-full"
+              className="p-2 px-3 rounded-lg w-full border-2 border-black"
+              placeholder="Client Contact Number"
               required
               value={newClientInfo.contact}
               onChange={(e) =>
@@ -50,10 +53,9 @@ const AddClient = () => {
               }
             />
           </div>
-          <div className="bg-blue-100 p-2 w-full flex items-center gap-3">
-            <label className="underline w-1/4 text-center">Notes: </label>
+          <div className=" p-2 w-full flex items-center gap-3  rounded-xl">
             <textarea
-              className="w-full rounded p-1 resize-none h-20"
+              className="w-full rounded-lg p-2 px-3 resize-none h-20 border-2 border-black"
               placeholder="Client notes..."
               type="text"
               required
@@ -66,9 +68,9 @@ const AddClient = () => {
               }
             ></textarea>
           </div>
-          <div className="bg-blue-100 p-2 w-full flex items-center justify-center gap-3">
+          <div className=" p-2 w-full flex items-center justify-center gap-3">
             <button
-              className="bg-white rounded p-2 border border-black"
+              className="bg-white rounded-2xl p-2 border-2 border-white text-lg underline"
               type="submit"
             >
               Add Client

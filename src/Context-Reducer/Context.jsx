@@ -53,6 +53,7 @@ const AppProvider = ({ children }) => {
   const [updatedNotes, setUpdatedNotes] = useState("");
   //
   const ref = useRef();
+  const clientUpdated = useRef();
   // Functions to handle state actions -
   //
   // To add a new Client
@@ -87,10 +88,10 @@ const AppProvider = ({ children }) => {
     // setUpdatedNotes("");
   };
   //
+  const updateClientInfo = () => {
+    dispatch({ type: "UPDATE_CLIENT", payload: clientUpdated });
+  };
 
-  // const listReceipts = (client) => {
-  //   dispatch({ type: "LIST_RECEIPTS", payload: client });
-  // };
   //Return statement
   return (
     <AppContext.Provider
@@ -111,6 +112,8 @@ const AppProvider = ({ children }) => {
         setUpdatedNotes,
         handleNoteChange,
         ref,
+        clientUpdated,
+        updateClientInfo,
       }}
     >
       {children}

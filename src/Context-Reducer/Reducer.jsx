@@ -108,8 +108,13 @@ const reducer = (state, action) => {
     setTimeout(() => {
       action.payload.current.classList.add("hidden");
     }, 3000);
-    // console.log(action.payload.current.classList.remove("hidden"));
-    // action.payload.current.innerHTML = "POOP";
+  }
+  //
+  if (action.type === "UPDATE_CLIENT") {
+    action.payload.current.classList.remove("hidden");
+    setTimeout(() => {
+      action.payload.current.classList.add("hidden");
+    }, 3000);
   }
   //
 

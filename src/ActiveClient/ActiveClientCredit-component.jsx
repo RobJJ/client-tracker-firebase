@@ -5,27 +5,26 @@ import { useGlobalContext } from "../Context-Reducer/Context";
 const ActiveClientCredit = () => {
   // const client = useOutletContext();
   //   console.log(client);
-  const { creditInfo, setCreditInfo, addCreditToClient } = useGlobalContext();
+  const { creditInfo, setCreditInfo, addCreditToClient, updateClientInfo } =
+    useGlobalContext();
   //
   return (
-    <div className="bg-pink-100 w-full h-full">
+    <div className=" w-full h-full">
       <div className="w-full h-full flex flex-col gap-3 p-2">
         {/* HEADER DISPLAY */}
-        <section className="bg-purple-300 h-10 w-full pt-2 text-xl underline pl-2">
-          <h2>Credits:</h2>
-        </section>
+
         {/* MAIN PAGE DISPLAY */}
-        <section className="bg-purple-300 h-full w-full flex p-2 gap-2">
+        <section className=" h-full w-full flex p-2 gap-2">
           {/* LEFT HAND SIDE DISPLAY */}
           <form
             onSubmit={addCreditToClient}
-            className="w-full border flex flex-col gap-1  p-1"
+            className="w-full flex flex-col gap-1  p-1"
           >
-            <div className="h-1/2 bg-purple-100 flex flex-col pt-5 text-center text-lg">
+            <div className="h-1/2  flex flex-col pt-5 text-center text-lg bg-[#F88074] border-2 border-black rounded-lg">
               <label className="h-1/3 underline pt-5 text-xl">
                 Session Trained Date:
               </label>
-              <div className=" bg-gray-300 h-2/3">
+              <div className="  h-2/3">
                 <input
                   required
                   type="date"
@@ -37,11 +36,11 @@ const ActiveClientCredit = () => {
                 />
               </div>
             </div>
-            <div className="h-1/2 bg-purple-100 flex flex-col pt-5 text-center text-lg">
+            <div className="h-1/2 bg-[#F88074] border-2 border-black rounded-lg flex flex-col pt-5 text-center text-lg">
               <label className="h-1/3 underline pt-5 text-xl">
                 Sessions Used:
               </label>
-              <div className=" bg-gray-300 h-2/3">
+              <div className="  h-2/3">
                 <input
                   required
                   type="number"
@@ -53,8 +52,15 @@ const ActiveClientCredit = () => {
                 />
               </div>
             </div>
-            <div className="text-center w-full">
-              <button type="submit" className="bg-white p-2 rounded-xl ">
+            <div
+              className="text-center w-full text-2xl
+font-navBarFont mt-2"
+            >
+              <button
+                type="submit"
+                className="bg-white text-[#F88074] p-2 rounded-xl  border-2 border-black w-40 tracking-wider underline "
+                onClick={updateClientInfo}
+              >
                 Credit Client
               </button>
             </div>

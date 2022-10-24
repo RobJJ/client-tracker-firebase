@@ -12,7 +12,7 @@ const ActiveClient = () => {
 
   //
   return (
-    <div className="bg-white w-full h-full flex flex-col p-1 overflow-auto">
+    <div className="border-2 border-black w-full h-full flex flex-col p-2 overflow-auto">
       {/* BASIC INFO SECTION */}
       <BasicInfo />
       {/* COMPLEX INFO SECTION */}

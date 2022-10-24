@@ -1,29 +1,70 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useGlobalContext } from "../Context-Reducer/Context";
 //
-const ComplexNav = ({ client }) => {
+// ABB7BC - gray -bg-[#ABB7BC]
+// F88074 - Orange - bg-[#F88074]
+// A55A42 - BRown (extra)
+//
+const ComplexNav = () => {
   const { focused } = useGlobalContext();
-
-  // const { id } = client;
+  //
 
   return (
-    <div className="bg-red-300 w-full h-12 flex text-center gap-1 items-center p-2 text-xl underline">
-      <Link
+    <div className=" w-full h-12 flex text-center gap-1 items-center p-2 text-xl underline  border-black border-y-4 mt-3 font-navBarFont tracking-widest">
+      <NavLink
         to={`/clientList/${focused.uniqueClient}`}
-        className="bg-white w-1/4"
+        end // for active class property matching
+        className={({ isActive }) =>
+          [
+            "border-2 border-black w-1/4 rounded-lg",
+            isActive ? "bg-[#ABB7BC] text-white" : "bg-white text-black",
+          ]
+            .filter(Boolean)
+            .join(" ")
+        }
       >
         NOTES
-      </Link>
-      <Link to={`debits`} className="bg-white w-1/4">
+      </NavLink>
+      <NavLink
+        to={`debits`}
+        className={({ isActive }) =>
+          [
+            "border-2 border-black w-1/4 rounded-lg",
+            isActive ? "bg-[#ABB7BC] text-white" : null,
+          ]
+            .filter(Boolean)
+            .join(" ")
+        }
+      >
         DEBIT
-      </Link>
-      <Link to={`credits`} className="bg-white w-1/4">
+      </NavLink>
+      <NavLink
+        to={`credits`}
+        className={({ isActive }) =>
+          [
+            "border-2 border-black w-1/4 rounded-lg",
+            isActive ? "bg-[#ABB7BC] text-white" : null,
+          ]
+            .filter(Boolean)
+            .join(" ")
+        }
+      >
         CREDIT
-      </Link>
-      <Link to={`receipts`} className="bg-white w-1/4">
+      </NavLink>
+      <NavLink
+        to={`receipts`}
+        className={({ isActive }) =>
+          [
+            "border-2 border-black w-1/4 rounded-lg",
+            isActive ? "bg-[#ABB7BC] text-white" : null,
+          ]
+            .filter(Boolean)
+            .join(" ")
+        }
+      >
         RECEIPTS
-      </Link>
+      </NavLink>
     </div>
   );
 };

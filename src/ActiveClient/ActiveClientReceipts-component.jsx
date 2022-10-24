@@ -24,13 +24,13 @@ const ActiveClientReceipts = () => {
 
   //
   return (
-    <div className="bg-blue-100 w-full h-full overflow-auto flex flex-col gap-2">
-      <div className="bg-purple-300 h-10 w-full pt-2 mt-2 text-xl underline p-2 flex text-center ">
+    <div className=" w-full h-full overflow-auto flex flex-col gap-2 p-2">
+      <div className="bg-[#F88074] border-2 border-black rounded-lg h-10 w-full pt-2 mt-2 text-xl underline p-2 flex text-center items-center ">
         <h2 className="w-1/3 underline">Date</h2>
         <h2 className="w-1/3 underline">Amount</h2>
         <h2 className="w-1/3 underline">Sessions</h2>
       </div>
-      <div className="h-full w-full border border-black overflow-auto">
+      <div className="h-full w-full overflow-auto">
         <div className="flex flex-col gap-1">
           {orderedReceipts &&
             orderedReceipts.map((debit) => {

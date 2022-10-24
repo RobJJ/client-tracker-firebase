@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useGlobalContext } from "../Context-Reducer/Context";
 //
 import { FaUserCheck } from "react-icons/fa";
@@ -8,26 +8,42 @@ const NAVBAR = () => {
   const { ref } = useGlobalContext();
   //
   return (
-    <div className="bg-white w-full h-20 shrink-0 flex gap-2">
-      <Link
+    <div className="bg-white w-full h-20 shrink-0 flex gap-2 border-b-4 border-black font-navBarFont ">
+      <NavLink
         to="addClient"
-        className="flex justify-center items-center w-1/2 h-full bg-pink-200 underline "
+        activeClassName="text-red"
+        className={({ isActive }) =>
+          [
+            "flex justify-center items-center w-1/2 h-full  underline rounded-t-xl",
+            isActive ? "bg-[#ABB7BC] text-white" : null,
+          ]
+            .filter(Boolean)
+            .join(" ")
+        }
       >
-        <h2>ADD CLIENT</h2>
-      </Link>
-      <Link
+        <h2 className="text-3xl tracking-wide">ADD CLIENT</h2>
+      </NavLink>
+      <NavLink
         to="clientList"
-        className="flex justify-center items-center w-1/2 h-full bg-pink-200 underline "
+        className={({ isActive }) =>
+          [
+            "flex justify-center items-center w-1/2 h-full  underline rounded-t-xl",
+            isActive ? "bg-[#ABB7BC] text-white" : null,
+          ]
+            .filter(Boolean)
+            .join(" ")
+        }
       >
         <div className="w-full h-1/2 relative text-center flex items-center justify-center">
           <span ref={ref} className="absolute top-0 right-10 hidden">
             <FaUserCheck className="text-green-500 text-3xl " />
           </span>
-          <h2>CLIENT LIST</h2>
+          <h2 className="text-3xl tracking-wide">CLIENT LIST</h2>
         </div>
-      </Link>
+      </NavLink>
     </div>
   );
 };
 
 export default NAVBAR;
+//
