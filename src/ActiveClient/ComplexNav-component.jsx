@@ -12,7 +12,7 @@ const ComplexNav = () => {
   //
 
   return (
-    <div className=" w-full h-12 flex text-center gap-1 items-center p-2 text-xl  underline  border-black border-y-4 mt-3 font-navBarFont tracking-widest">
+    <div className=" w-full h-12 flex text-center gap-1 items-center p-2 text-xl  underline  border-black border-y-4 mt-3 short:mt-1 font-navBarFont tracking-widest">
       <NavLink
         to={`/clientList/${focused.uniqueClient}`}
         end // for active class property matching

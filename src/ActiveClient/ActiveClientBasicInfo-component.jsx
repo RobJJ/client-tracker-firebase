@@ -8,7 +8,7 @@ const BasicInfo = () => {
   const { focused, clientUpdated } = useGlobalContext();
   //
   return (
-    <section className=" w-full h-40 flex p-1 gap-1 text-lg">
+    <section className=" w-full h-40  flex p-1 gap-1 text-lg">
       <div className=" rounded-lg w-1/2 flex flex-col justify-around items-center text-center p-2 gap-2">
         <h2 className="bg-[#F88074] w-full border-2 border-black rounded-lg pocket-ty:overflow-auto">
           {focused.name}

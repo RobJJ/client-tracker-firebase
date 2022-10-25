@@ -12,7 +12,7 @@ const ActiveClient = () => {
 
   //
   return (
-    <div className=" w-full h-full flex flex-col p-2 overflow-auto">
+    <div className=" w-full h-full flex flex-col p-2 overflow-auto short:p-0">
       {/* BASIC INFO SECTION */}
       <BasicInfo />
       {/* COMPLEX INFO SECTION */}
@@ -22,3 +22,4 @@ const ActiveClient = () => {
   );
 };
 export default ActiveClient;
+//

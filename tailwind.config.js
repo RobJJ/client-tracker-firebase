@@ -7,6 +7,7 @@ module.exports = {
       pocket: { max: "600px" },
       "pocket-sm": { max: "500px" },
       "pocket-ty": { max: "420px" },
+      short: { raw: "(max-height: 750px)" },
     },
     extend: {},
     fontFamily: {

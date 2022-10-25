@@ -12,7 +12,7 @@ const AddClient = () => {
   //
   return (
     <div className="bg-white w-full h-full p-2 flex justify-center">
-      <div className="border-4 border-black w-[450px] h-[450px] pocket:h-3/4 mt-16 p-2 flex justify-center items-center rounded-xl">
+      <div className="border-4 border-black w-[450px] h-[450px] pocket:h-3/4 short:h-auto short:mt-0 mt-16 p-2 flex justify-center items-center rounded-xl">
         <form
           className=" w-full h-full flex flex-col justify-around bg-[#F88074] rounded-xl"
           onSubmit={submitNewClient}
