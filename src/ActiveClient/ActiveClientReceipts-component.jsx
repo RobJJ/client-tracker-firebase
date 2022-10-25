@@ -24,8 +24,8 @@ const ActiveClientReceipts = () => {
 
   //
   return (
-    <div className=" w-full h-full overflow-auto flex flex-col gap-2 p-2">
-      <div className="bg-[#F88074] border-2 border-black rounded-lg h-10 w-full mt-2 text-xl underline p-2 flex items-center gap-1 text-center pocket-ty:text-lg">
+    <div className=" w-full h-full overflow-auto flex flex-col gap-2 p-2 ">
+      <div className="bg-[#F88074] border-2 border-black rounded-lg h-10 w-full mt-2 text-xl underline p-2 flex items-center gap-1 text-center pocket-ty:text-lg font-clientInfo tracking-wide">
         <h2 className="w-1/3 ">Date</h2>
         <h2 className="w-1/3 ">Amount</h2>
         <h2 className="w-1/3 ">Sessions</h2>

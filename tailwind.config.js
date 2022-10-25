@@ -12,6 +12,8 @@ module.exports = {
     extend: {},
     fontFamily: {
       navBarFont: ["Bebas Neue", "cursive"],
+      clientInfo: ["Kanit", "sans-serif"],
+      clientNotes: ["Caveat", "cursive"],
     },
   },
   plugins: [],

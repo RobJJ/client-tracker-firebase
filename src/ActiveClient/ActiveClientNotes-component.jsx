@@ -24,7 +24,7 @@ const ActiveClientNotes = () => {
         className="w-full h-full flex flex-col gap-3 p-2"
       >
         <textarea
-          className="h-full text-lg p-5 resize-none rounded-md mt-3 border-2 border-black  bg-[#F88074] placeholder-white"
+          className="h-full text-3xl p-5 resize-none rounded-md mt-3 border-2 border-black  bg-[#F88074] placeholder-white font-clientNotes"
           placeholder="Add some notes here..."
           value={updatedNotes}
           onChange={(e) => setUpdatedNotes(e.target.value)}

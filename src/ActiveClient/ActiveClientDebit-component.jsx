@@ -19,7 +19,7 @@ const ActiveClientDebit = () => {
           className=" w-full h-full rounded-lg flex flex-col gap-1 "
           onSubmit={addDebitToClient}
         >
-          <div className="h-1/3 bg-[#F88074] flex flex-col text-center text-lg border-2 border-black rounded-lg justify-center">
+          <div className="h-1/3 bg-[#F88074] flex flex-col text-center text-lg border-2 border-black rounded-lg justify-center font-clientInfo tracking-wide">
             <label className="h-1/2 underline pt-2 text-xl short:pt-0">
               Payment Date:
             </label>
@@ -35,7 +35,7 @@ const ActiveClientDebit = () => {
               />
             </div>
           </div>
-          <div className="h-1/3 bg-[#F88074] flex flex-col text-center text-lg border-2 border-black rounded-lg">
+          <div className="h-1/3 bg-[#F88074] flex flex-col text-center text-lg border-2 border-black rounded-lg font-clientInfo tracking-wide">
             <label className="h-1/2 underline text-xl pt-2 short:pt-0">
               Payment Amount:
             </label>
@@ -52,7 +52,7 @@ const ActiveClientDebit = () => {
               />
             </div>
           </div>
-          <div className="h-1/3 bg-[#F88074] border-2 border-black rounded-lg flex flex-col text-center text-lg">
+          <div className="h-1/3 bg-[#F88074] border-2 border-black rounded-lg flex flex-col text-center text-lg font-clientInfo tracking-wide">
             <label className="h-1/2 underline text-xl pt-2 short:pt-0">
               Sessions Added:
             </label>
