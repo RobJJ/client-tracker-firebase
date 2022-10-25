@@ -75,7 +75,6 @@ font-navBarFont mt-2 short:mt-1"
             <button
               type="submit"
               className="bg-white text-[#F88074] p-2 rounded-xl  border-2 border-black w-40 tracking-wider underline "
-              onClick={updateClientInfo}
             >
               Debit Client
             </button>
@@ -89,3 +88,4 @@ font-navBarFont mt-2 short:mt-1"
 export default ActiveClientDebit;
 
 //  <div className="w-full h-full flex flex-col p-2"></div>;
+// onClick={updateClientInfo} (button)

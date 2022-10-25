@@ -67,6 +67,7 @@ const AppProvider = ({ children }) => {
   const addDebitToClient = (e) => {
     e.preventDefault();
     //
+    dispatch({ type: "UPDATE_CLIENT", payload: clientUpdated });
     dispatch({ type: "DEBIT_CLIENT", payload: { debitInfo } });
     dispatch({ type: "UPDATE_FOCUS" });
     setDebitInfo(debitTemplate);
@@ -75,6 +76,8 @@ const AppProvider = ({ children }) => {
   const addCreditToClient = (e) => {
     e.preventDefault();
     //
+    dispatch({ type: "UPDATE_CLIENT", payload: clientUpdated });
+
     dispatch({ type: "CREDIT_CLIENT", payload: { creditInfo } });
     dispatch({ type: "UPDATE_FOCUS" });
     setCreditInfo(creditTemplate);
@@ -88,9 +91,9 @@ const AppProvider = ({ children }) => {
     // setUpdatedNotes("");
   };
   //
-  const updateClientInfo = () => {
-    dispatch({ type: "UPDATE_CLIENT", payload: clientUpdated });
-  };
+  // const updateClientInfo = () => {
+  //   // dispatch({ type: "UPDATE_CLIENT", payload: clientUpdated });
+  // };
 
   //Return statement
   return (
@@ -113,7 +116,6 @@ const AppProvider = ({ children }) => {
         handleNoteChange,
         ref,
         clientUpdated,
-        updateClientInfo,
       }}
     >
       {children}

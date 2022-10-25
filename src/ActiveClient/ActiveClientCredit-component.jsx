@@ -59,7 +59,6 @@ font-navBarFont mt-2"
               <button
                 type="submit"
                 className="bg-white text-[#F88074] p-2 rounded-xl  border-2 border-black w-40 tracking-wider underline "
-                onClick={updateClientInfo}
               >
                 Credit Client
               </button>

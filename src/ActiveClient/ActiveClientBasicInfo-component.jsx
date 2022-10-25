@@ -10,14 +10,14 @@ const BasicInfo = () => {
   return (
     <section className=" w-full h-40  flex p-1 gap-1 text-lg font-clientInfo tracking-wider">
       <div className=" rounded-lg w-1/2 flex flex-col justify-around items-center text-center p-2 gap-2">
-        <h2 className="bg-[#F88074] w-full border-2 border-black rounded-lg pocket-ty:overflow-auto">
-          {focused.name}
+        <h2 className="bg-[#F88074] w-full border-2 border-black rounded-lg h-1/3 overflow-x-scroll whitespace-nowrap">
+          <span>{focused.name}</span>
         </h2>
-        <p className="bg-[#F88074] w-full border-2 border-black rounded-lg pocket-ty:overflow-auto">
-          {focused.email}
+        <p className="bg-[#F88074] w-full border-2 border-black rounded-lg h-1/3 overflow-scroll">
+          <span> {focused.email}</span>
         </p>
-        <p className="bg-[#F88074] w-full border-2 border-black rounded-lg pocket-ty:overflow-auto">
-          {focused.contact}
+        <p className="bg-[#F88074] w-full border-2 border-black rounded-lg h-1/3 overflow-scroll">
+          <span>{focused.contact}</span>
         </p>
       </div>
       <div className=" rounded-lg w-1/2 p-2 flex flex-col gap-2 text-center items-center">
@@ -38,3 +38,4 @@ export default BasicInfo;
 // <Link to="/clientList" className="bg-white p-2 rounded-md">
 //   Back to the ClientList!
 // </Link>;
+//pocket-ty:overflow-x-auto overflow-y-hidden
