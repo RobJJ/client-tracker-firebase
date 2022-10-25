@@ -11,7 +11,6 @@ const NAVBAR = () => {
     <div className="bg-white w-full h-20 shrink-0 flex gap-2 border-b-4 border-black font-navBarFont ">
       <NavLink
         to="addClient"
-        activeClassName="text-red"
         className={({ isActive }) =>
           [
             "flex justify-center items-center w-1/2 h-full  underline rounded-t-xl",
@@ -35,7 +34,10 @@ const NAVBAR = () => {
         }
       >
         <div className="w-full h-1/2 relative text-center flex items-center justify-center">
-          <span ref={ref} className="absolute top-0 right-10 hidden">
+          <span
+            ref={ref}
+            className="absolute top-0 right-10 pocket:right-5 pocket-sm:right-1 pocket-ty:top-8 pocket-ty:right-10 hidden"
+          >
             <FaUserCheck className="text-green-500 text-3xl " />
           </span>
           <h2 className="text-3xl tracking-wide">CLIENT LIST</h2>

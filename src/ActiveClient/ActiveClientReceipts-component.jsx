@@ -25,10 +25,10 @@ const ActiveClientReceipts = () => {
   //
   return (
     <div className=" w-full h-full overflow-auto flex flex-col gap-2 p-2">
-      <div className="bg-[#F88074] border-2 border-black rounded-lg h-10 w-full pt-2 mt-2 text-xl underline p-2 flex text-center items-center ">
-        <h2 className="w-1/3 underline">Date</h2>
-        <h2 className="w-1/3 underline">Amount</h2>
-        <h2 className="w-1/3 underline">Sessions</h2>
+      <div className="bg-[#F88074] border-2 border-black rounded-lg h-10 w-full mt-2 text-xl underline p-2 flex items-center gap-1 text-center pocket-ty:text-lg">
+        <h2 className="w-1/3 ">Date</h2>
+        <h2 className="w-1/3 ">Amount</h2>
+        <h2 className="w-1/3 ">Sessions</h2>
       </div>
       <div className="h-full w-full overflow-auto">
         <div className="flex flex-col gap-1">
@@ -37,7 +37,7 @@ const ActiveClientReceipts = () => {
               return (
                 <div
                   key={debit.id}
-                  className={`w-full h-10  flex text-center rounded-xl  items-center ${
+                  className={`w-full h-10 flex text-center rounded-xl  items-center ${
                     debit.amount ? "bg-green-200" : "bg-yellow-200"
                   }`}
                 >

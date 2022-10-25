@@ -12,7 +12,7 @@ const AddClient = () => {
   //
   return (
     <div className="bg-white w-full h-full p-2 flex justify-center">
-      <div className="border-4 border-black w-[450px] h-[450px] mt-16 p-2 flex justify-center items-center rounded-xl">
+      <div className="border-4 border-black w-[450px] h-[450px] pocket:h-3/4 mt-16 p-2 flex justify-center items-center rounded-xl">
         <form
           className=" w-full h-full flex flex-col justify-around bg-[#F88074] rounded-xl"
           onSubmit={submitNewClient}
@@ -55,7 +55,7 @@ const AddClient = () => {
           </div>
           <div className=" p-2 w-full flex items-center gap-3  rounded-xl">
             <textarea
-              className="w-full rounded-lg p-2 px-3 resize-none h-20 border-2 border-black"
+              className="w-full rounded-lg p-2 px-3 resize-none h-20 pocket:h-32 border-2 border-black"
               placeholder="Client notes..."
               type="text"
               required
@@ -68,9 +68,9 @@ const AddClient = () => {
               }
             ></textarea>
           </div>
-          <div className=" p-2 w-full flex items-center justify-center gap-3">
+          <div className=" p-2 w-full flex items-center justify-center gap-3 font-navBarFont ">
             <button
-              className="bg-white rounded-2xl p-2 border-2 border-white text-lg underline"
+              className="bg-white text-[#F88074] rounded-2xl p-2 border-2 border-black text-2xl underline w-40 tracking-wider"
               type="submit"
             >
               Add Client

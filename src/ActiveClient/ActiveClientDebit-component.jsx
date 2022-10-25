@@ -28,7 +28,7 @@ const ActiveClientDebit = () => {
                 <input
                   required
                   type="date"
-                  className=" text-center p-1 rounded-lg w-1/3"
+                  className=" text-center p-1 rounded-lg w-1/3 pocket-sm:w-2/3"
                   value={debitInfo.date}
                   onChange={(e) =>
                     setDebitInfo({ ...debitInfo, date: e.target.value })
@@ -44,7 +44,7 @@ const ActiveClientDebit = () => {
                 <input
                   required
                   type="text"
-                  className=" text-center p-1 rounded-lg w-1/3"
+                  className=" text-center p-1 rounded-lg w-1/3 pocket-sm:w-2/3"
                   placeholder="720 usd"
                   value={debitInfo.amount}
                   onChange={(e) =>
@@ -61,7 +61,7 @@ const ActiveClientDebit = () => {
                 <input
                   required
                   type="number"
-                  className=" text-center p-1 rounded-lg w-1/3 text-xl "
+                  className=" text-center p-1 rounded-lg w-1/3 pocket-sm:w-2/3 text-xl "
                   value={debitInfo.sessions}
                   onChange={(e) =>
                     setDebitInfo({ ...debitInfo, sessions: e.target.value })

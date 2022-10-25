@@ -24,7 +24,7 @@ const ActiveClientCredit = () => {
               <label className="h-1/3 underline pt-5 text-xl">
                 Session Trained Date:
               </label>
-              <div className="  h-2/3">
+              <div className=" h-2/3">
                 <input
                   required
                   type="date"
@@ -32,7 +32,7 @@ const ActiveClientCredit = () => {
                   onChange={(e) =>
                     setCreditInfo({ ...creditInfo, date: e.target.value })
                   }
-                  className=" text-center p-2 rounded-lg mt-2"
+                  className=" text-center p-2 rounded-lg mt-2  w-1/3 pocket-sm:w-2/3"
                 />
               </div>
             </div>
@@ -40,11 +40,11 @@ const ActiveClientCredit = () => {
               <label className="h-1/3 underline pt-5 text-xl">
                 Sessions Used:
               </label>
-              <div className="  h-2/3">
+              <div className="  h-2/3 ">
                 <input
                   required
                   type="number"
-                  className=" text-center p-2 rounded-lg mt-2"
+                  className=" text-center p-2 rounded-lg mt-2 w-1/3 pocket-sm:w-2/3"
                   value={creditInfo.sessions}
                   onChange={(e) =>
                     setCreditInfo({ ...creditInfo, sessions: e.target.value })

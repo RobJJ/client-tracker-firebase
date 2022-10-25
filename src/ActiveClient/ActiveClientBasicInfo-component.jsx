@@ -10,13 +10,13 @@ const BasicInfo = () => {
   return (
     <section className=" w-full h-40 flex p-1 gap-1 text-lg">
       <div className=" rounded-lg w-1/2 flex flex-col justify-around items-center text-center p-2 gap-2">
-        <h2 className="bg-[#F88074] w-full border-2 border-black rounded-lg">
+        <h2 className="bg-[#F88074] w-full border-2 border-black rounded-lg pocket-ty:overflow-auto">
           {focused.name}
         </h2>
-        <p className="bg-[#F88074] w-full border-2 border-black rounded-lg">
+        <p className="bg-[#F88074] w-full border-2 border-black rounded-lg pocket-ty:overflow-auto">
           {focused.email}
         </p>
-        <p className="bg-[#F88074] w-full border-2 border-black rounded-lg">
+        <p className="bg-[#F88074] w-full border-2 border-black rounded-lg pocket-ty:overflow-auto">
           {focused.contact}
         </p>
       </div>

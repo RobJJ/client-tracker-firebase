@@ -1,4 +1,5 @@
 import React from "react";
+import { FaSnapchat } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
 import { useGlobalContext } from "../Context-Reducer/Context";
 //
@@ -11,7 +12,7 @@ const ComplexNav = () => {
   //
 
   return (
-    <div className=" w-full h-12 flex text-center gap-1 items-center p-2 text-xl underline  border-black border-y-4 mt-3 font-navBarFont tracking-widest">
+    <div className=" w-full h-12 flex text-center gap-1 items-center p-2 text-xl  underline  border-black border-y-4 mt-3 font-navBarFont tracking-widest">
       <NavLink
         to={`/clientList/${focused.uniqueClient}`}
         end // for active class property matching
@@ -63,7 +64,8 @@ const ComplexNav = () => {
             .join(" ")
         }
       >
-        RECEIPTS
+        <span className="pocket-ty:hidden">RECEIPTS</span>
+        <span className="hidden pocket-ty:block">RCPTS</span>
       </NavLink>
     </div>
   );

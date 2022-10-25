@@ -22,7 +22,7 @@ const ClientList = () => {
   // };
   return (
     <div className=" overflow-auto w-full h-full flex justify-center p-2">
-      <div className="border-4 border-black w-[450px] h-[450px] mt-16 p-2 flex flex-col justify-center items-center rounded-xl gap-2 ">
+      <div className="border-4 border-black w-[450px] h-[450px] pocket:h-3/4 mt-16 p-2 flex flex-col justify-center items-center rounded-xl gap-2 ">
         <div className=" h-10 mt-1 p-1 w-full border-2 border-black rounded-lg">
           <input
             type="search"
