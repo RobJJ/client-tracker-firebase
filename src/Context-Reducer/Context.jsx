@@ -80,6 +80,8 @@ const AppProvider = ({ children }) => {
   const handleNoteChange = (e) => {
     e.preventDefault();
     //
+    dispatch({ type: "UPDATE_CLIENT", payload: clientUpdated });
+
     dispatch({ type: "NOTE_CHANGE", payload: { updatedNotes } });
     dispatch({ type: "UPDATE_FOCUS" });
   };
