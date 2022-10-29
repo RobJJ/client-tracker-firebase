@@ -1,11 +1,8 @@
-import React, { useEffect, useState } from "react";
-// import { useOutletContext } from "react-router-dom";
+import React, { useEffect } from "react";
 import { useGlobalContext } from "../Context-Reducer/Context";
 //
 const ActiveClientNotes = () => {
-  // const client = useOutletContext();
-  //   console.log(client);
-
+  //
   const {
     focused,
     handleNoteChange,
@@ -13,6 +10,7 @@ const ActiveClientNotes = () => {
     setUpdatedNotes,
     updateClientInfo,
   } = useGlobalContext();
+  //
   useEffect(() => {
     setUpdatedNotes(focused.notes);
   }, []);
@@ -44,7 +42,3 @@ const ActiveClientNotes = () => {
 };
 
 export default ActiveClientNotes;
-
-// <h2 className="h-10 bg-[#F88074] w-full p-2 text-xl underline pl-4 rounded-lg">
-//   Notes:
-// </h2>;

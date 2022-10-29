@@ -1,9 +1,6 @@
 import React from "react";
 import { useGlobalContext } from "../Context-Reducer/Context";
 //
-// ABB7BC - gray -bg-[#ABB7BC]
-// F88074 - Orange - bg-[#F88074]
-// A55A42 - BRown (extra)
 //
 const AddClient = () => {
   // Actions grabbed from context

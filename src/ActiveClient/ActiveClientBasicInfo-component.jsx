@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { useGlobalContext } from "../Context-Reducer/Context";
 //
 import { FaCheck } from "react-icons/fa";
@@ -9,15 +8,15 @@ const BasicInfo = () => {
   //
   return (
     <section className=" w-full h-40  flex p-1 gap-1 text-lg font-clientInfo tracking-wider">
-      <div className=" rounded-lg w-1/2 flex flex-col justify-around items-center text-center p-2 gap-2">
-        <h2 className="bg-[#F88074] w-full border-2 border-black rounded-lg h-1/3 overflow-x-scroll whitespace-nowrap">
-          <span>{focused.name}</span>
+      <div className=" rounded-lg w-1/2 flex flex-col justify-around items-center text-center p-2 gap-2 ">
+        <h2 className="bg-[#F88074] w-full border-2 border-black rounded-lg h-1/3  whitespace-nowrap truncate">
+          {focused.name}
         </h2>
-        <p className="bg-[#F88074] w-full border-2 border-black rounded-lg h-1/3 overflow-scroll">
-          <span> {focused.email}</span>
+        <p className="bg-[#F88074] w-full border-2 border-black rounded-lg h-1/3 truncate">
+          {focused.email}
         </p>
-        <p className="bg-[#F88074] w-full border-2 border-black rounded-lg h-1/3 overflow-scroll">
-          <span>{focused.contact}</span>
+        <p className="bg-[#F88074] w-full border-2 border-black rounded-lg h-1/3 truncate">
+          {focused.contact}
         </p>
       </div>
       <div className=" rounded-lg w-1/2 p-2 flex flex-col gap-2 text-center items-center">
@@ -34,8 +33,3 @@ const BasicInfo = () => {
 };
 
 export default BasicInfo;
-
-// <Link to="/clientList" className="bg-white p-2 rounded-md">
-//   Back to the ClientList!
-// </Link>;
-//pocket-ty:overflow-x-auto overflow-y-hidden

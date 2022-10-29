@@ -1,20 +1,14 @@
 import React from "react";
-import { useOutletContext } from "react-router-dom";
 import { useGlobalContext } from "../Context-Reducer/Context";
 //
 const ActiveClientDebit = () => {
-  // const client = useOutletContext();
-  //   console.log(client);
-  const { debitInfo, setDebitInfo, updateClientInfo, addDebitToClient } =
-    useGlobalContext();
+  //
+  const { debitInfo, setDebitInfo, addDebitToClient } = useGlobalContext();
   //
   return (
     <div className=" w-full h-full rounded-b-lg p-2">
-      {/* HEADER DISPLAY */}
-
       {/* MAIN PAGE DISPLAY */}
       <div className=" h-full w-full flex p-2 gap-2 short:p-0">
-        {/* LEFT HAND SIDE DISPLAY */}
         <form
           className=" w-full h-full rounded-lg flex flex-col gap-1 "
           onSubmit={addDebitToClient}
@@ -87,5 +81,6 @@ font-navBarFont mt-2 short:mt-1"
 
 export default ActiveClientDebit;
 
-//  <div className="w-full h-full flex flex-col p-2"></div>;
-// onClick={updateClientInfo} (button)
+// Try ->
+// You can make a generic function to handle the changes in each input. Use the property of name in each input and that property will
+// be displayed in the event object. This helps you identify which input is being triggered and then you can handle it accordingly.

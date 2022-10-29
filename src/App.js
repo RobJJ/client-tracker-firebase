@@ -6,7 +6,6 @@ import AddClient from "./AddClient/AddClient-component";
 import Home from "./Home/Home-component";
 import ActiveClient from "./ActiveClient/ActiveClient-component";
 import ActiveClientNotes from "./ActiveClient/ActiveClientNotes-component";
-// import DefaultActiveDisplay from "./ActiveClient/DefaultActiveDisplay-component";
 import ActiveClientReceipts from "./ActiveClient/ActiveClientReceipts-component";
 import ActiveClientDebit from "./ActiveClient/ActiveClientDebit-component";
 import ActiveClientCredit from "./ActiveClient/ActiveClientCredit-component";
@@ -18,7 +17,6 @@ function App() {
         <Route index element={<Home />} />
         <Route path="clientList" element={<ClientList />} />
         <Route path="clientList/:clientId" element={<ActiveClient />}>
-          {/*<Route index element={<DefaultActiveDisplay />} />*/}
           <Route index element={<ActiveClientNotes />} />
           <Route path="debits" element={<ActiveClientDebit />} />
           <Route path="credits" element={<ActiveClientCredit />} />
@@ -31,4 +29,3 @@ function App() {
 }
 
 export default App;
-// was index on notes

@@ -1,15 +1,10 @@
 import React from "react";
-import { useParams, Outlet } from "react-router-dom";
-import { useGlobalContext } from "../Context-Reducer/Context";
-// import data from "../ClientData/ClientData-component";
-import { clientData } from "../Data/ClientData";
+import { Outlet } from "react-router-dom";
+
 import BasicInfo from "./ActiveClientBasicInfo-component";
-import ComplexFooter from "./ComplexFooter-component";
 import ComplexNav from "./ComplexNav-component";
 //
 const ActiveClient = () => {
-  // is rendering correctly
-
   //
   return (
     <div className=" w-full h-full flex flex-col p-2 overflow-auto short:p-0">

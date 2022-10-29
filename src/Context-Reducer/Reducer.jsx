@@ -122,3 +122,5 @@ const reducer = (state, action) => {
 };
 
 export default reducer;
+
+// Debit and Credit client are too similar in the way they work. Try find a way to convert that into 1 function

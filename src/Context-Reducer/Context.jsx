@@ -1,10 +1,4 @@
-import React, {
-  useContext,
-  useState,
-  useReducer,
-  useEffect,
-  useRef,
-} from "react";
+import React, { useContext, useState, useReducer, useRef } from "react";
 import reducer from "./Reducer";
 import { clientData } from "../Data/ClientData";
 
@@ -85,15 +79,11 @@ const AppProvider = ({ children }) => {
   //
   const handleNoteChange = (e) => {
     e.preventDefault();
-    // console.log(updatedNotes);
+    //
     dispatch({ type: "NOTE_CHANGE", payload: { updatedNotes } });
     dispatch({ type: "UPDATE_FOCUS" });
-    // setUpdatedNotes("");
   };
   //
-  // const updateClientInfo = () => {
-  //   // dispatch({ type: "UPDATE_CLIENT", payload: clientUpdated });
-  // };
 
   //Return statement
   return (

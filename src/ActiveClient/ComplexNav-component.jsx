@@ -1,11 +1,7 @@
 import React from "react";
-import { FaSnapchat } from "react-icons/fa";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useGlobalContext } from "../Context-Reducer/Context";
 //
-// ABB7BC - gray -bg-[#ABB7BC]
-// F88074 - Orange - bg-[#F88074]
-// A55A42 - BRown (extra)
 //
 const ComplexNav = () => {
   const { focused } = useGlobalContext();

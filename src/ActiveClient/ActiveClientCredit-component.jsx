@@ -1,21 +1,15 @@
 import React from "react";
-// import { useOutletContext } from "react-router-dom";
 import { useGlobalContext } from "../Context-Reducer/Context";
 //
 const ActiveClientCredit = () => {
-  // const client = useOutletContext();
-  //   console.log(client);
-  const { creditInfo, setCreditInfo, addCreditToClient, updateClientInfo } =
-    useGlobalContext();
+  //
+  const { creditInfo, setCreditInfo, addCreditToClient } = useGlobalContext();
   //
   return (
     <div className=" w-full h-full">
       <div className="w-full h-full flex flex-col gap-3 p-2">
-        {/* HEADER DISPLAY */}
-
         {/* MAIN PAGE DISPLAY */}
         <section className=" h-full w-full flex p-2 gap-2">
-          {/* LEFT HAND SIDE DISPLAY */}
           <form
             onSubmit={addCreditToClient}
             className="w-full flex flex-col gap-1  p-1"

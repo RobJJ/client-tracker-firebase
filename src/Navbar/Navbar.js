@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useGlobalContext } from "../Context-Reducer/Context";
 //
 import { FaUserCheck } from "react-icons/fa";
@@ -34,11 +34,12 @@ const NAVBAR = () => {
         }
       >
         <div className="w-full h-1/2 relative text-center flex items-center justify-center">
+          {/* ALERT ICON FOR CLIENT ADDED */}
           <span
             ref={ref}
-            className="absolute top-0 right-10 pocket:right-5 pocket-sm:right-1 pocket-ty:top-8 pocket-ty:right-10 hidden"
+            className="absolute top-0 right-10 pocket:right-5 pocket-sm:right-1 pocket-ty:bottom-0 pocket-ty:right-0 hidden"
           >
-            <FaUserCheck className="text-green-500 text-3xl " />
+            <FaUserCheck className="text-green-500 text-3xl pocket-ty:text-2xl" />
           </span>
           <h2 className="text-3xl tracking-wide">CLIENT LIST</h2>
         </div>
@@ -48,4 +49,5 @@ const NAVBAR = () => {
 };
 
 export default NAVBAR;
+//
 //
