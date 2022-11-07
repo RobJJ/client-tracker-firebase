@@ -9,11 +9,11 @@ import { AppProvider } from "./Context-Reducer/Context";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <AppProvider>
-      <HashRouter>
+    <HashRouter>
+      <AppProvider>
         <App />
-      </HashRouter>
-    </AppProvider>
+      </AppProvider>
+    </HashRouter>
   </React.StrictMode>
 );
 
