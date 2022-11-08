@@ -13,7 +13,7 @@ import ActiveClientCredit from "./ActiveClient/ActiveClientCredit-component";
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<AppLayout />}>
+      <Route exact path="/" element={<AppLayout />}>
         <Route index element={<Home />} />
         <Route path="clientList" element={<ClientList />} />
         <Route path="clientList/:clientId" element={<ActiveClient />}>
