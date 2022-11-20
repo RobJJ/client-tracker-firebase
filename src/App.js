@@ -9,7 +9,7 @@ import ActiveClientNotes from "./ActiveClient/ActiveClientNotes-component";
 import ActiveClientReceipts from "./ActiveClient/ActiveClientReceipts-component";
 import ActiveClientDebit from "./ActiveClient/ActiveClientDebit-component";
 import ActiveClientCredit from "./ActiveClient/ActiveClientCredit-component";
-//
+
 function App() {
   return (
     <Routes>

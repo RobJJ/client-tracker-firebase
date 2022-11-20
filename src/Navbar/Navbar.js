@@ -5,12 +5,15 @@ import { useGlobalContext } from "../Context-Reducer/Context";
 import { FaUserCheck } from "react-icons/fa";
 //
 const NAVBAR = () => {
-  const { ref } = useGlobalContext();
+  const { ref, userInSession } = useGlobalContext();
+
   //
   return (
     <div className="bg-white w-full h-20 shrink-0 flex gap-2 border-b-4 border-black font-navBarFont ">
       <NavLink
-        to="addClient"
+        // to="addClient"
+        to={!userInSession ? "" : "addClient"}
+        data-tooltip-target="tooltip-default"
         className={({ isActive }) =>
           [
             "flex justify-center items-center w-1/2 h-full  underline rounded-t-xl",
@@ -22,8 +25,10 @@ const NAVBAR = () => {
       >
         <h2 className="text-3xl tracking-wide">ADD CLIENT</h2>
       </NavLink>
+
       <NavLink
-        to="clientList"
+        // to="clientList"
+        to={!userInSession ? "" : "clientList"}
         className={({ isActive }) =>
           [
             "flex justify-center items-center w-1/2 h-full  underline rounded-t-xl",
@@ -51,3 +56,10 @@ const NAVBAR = () => {
 export default NAVBAR;
 //
 //
+// <div
+//   id="tooltip-default"
+//   role="tooltip"
+//   className="inline-block invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip dark:bg-gray-700"
+// >
+//   Please log in!
+// </div>;

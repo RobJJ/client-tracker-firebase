@@ -1,29 +1,49 @@
-import React, { useContext, useState, useReducer, useRef } from "react";
+import React, {
+  useContext,
+  useState,
+  useReducer,
+  useRef,
+  useEffect,
+} from "react";
 import reducer from "./Reducer";
-import { clientData } from "../Data/ClientData";
+// import { clientData } from "../Data/ClientData";
+import ClientDataService from "../Firebase/firebase-services.js";
+import {
+  logGoogleUser,
+  onAuthStateChangedListener,
+} from "../Firebase/Firebase-config.js";
 
 //
 //
 const AppContext = React.createContext();
 //
 // Initial State for Reducer
-const initialState = {
-  clients: clientData,
-  // loading: false,
-  focused: {},
-  uniqueClients: 0,
-};
-//
+// const initialState = {
+//   // Stars as an empty array -> could hook in here at login
+//   clients: clientData,
+//   // loading: false,
+//   focused: {},
+//   uniqueClients: 0,
+// };
+// Old template
+// const clientTemplate = {
+//   name: "",
+//   email: "",
+//   contact: "",
+//   id: "",
+//   uniqueClient: 0,
+//   active: false,
+//   notes: [],
+//   receipts: { debits: [], credits: [] },
+//   balance: 0,
+// };
+// TEMPLATES TO USE
 const clientTemplate = {
   name: "",
-  email: "",
-  contact: "",
-  id: "",
-  uniqueClient: 0,
-  active: false,
+  joined: "",
+  debits: [],
+  credits: [],
   notes: [],
-  receipts: { debits: [], credits: [] },
-  balance: 0,
 };
 // Default Template for Debit and Credit Info
 const debitTemplate = {
@@ -31,25 +51,44 @@ const debitTemplate = {
   id: "",
   amount: "",
   sessions: 0,
+  note: "",
 };
 const creditTemplate = {
   date: "",
   id: "",
   sessions: 0,
+  note: "",
 };
 //
 const AppProvider = ({ children }) => {
   // State varibales go here -
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [state, dispatch] = useReducer(reducer, []);
   const [newClientInfo, setNewClientInfo] = useState(clientTemplate);
   const [debitInfo, setDebitInfo] = useState(debitTemplate);
   const [creditInfo, setCreditInfo] = useState(creditTemplate);
   const [updatedNotes, setUpdatedNotes] = useState("");
+  const [userInSession, setUserInSession] = useState(false);
+  const [currentUser, setCurrentUser] = useState({});
   //
   const ref = useRef();
   const clientUpdated = useRef();
   // Functions to handle state actions -
   //
+  // Auth Listerner !!
+  // useEffect(() => {
+  //   // Passing the callback to the listener - calls unsub on unmount - cleans up the function on the listener
+  //   const unsubscribe = onAuthStateChangedListener((user) => {
+  //     if (user) {
+  //       ClientDataService.createUserDocFromAuth(user);
+  //       // getAllUsersClients(user.uid);
+  //     } else {
+  //       // setClients([]);
+  //     }
+  //     console.log(user);
+  //     setCurrentUser(user);
+  //   });
+  //   return unsubscribe;
+  // }, []);
   // To add a new Client
   const submitNewClient = (e) => {
     e.preventDefault();
@@ -85,6 +124,14 @@ const AppProvider = ({ children }) => {
     dispatch({ type: "NOTE_CHANGE", payload: { updatedNotes } });
     dispatch({ type: "UPDATE_FOCUS" });
   };
+  ////////////////////////////////////////////
+  // NEW METHODS MADE FOR FIREBASE INTERGRATION
+  ////////////////////////////////////////////
+  // const handleLogIn = async () => {
+  //   await logGoogleUser();
+  //   setUserInSession(true);
+  // };
+  const handleLogOut = async () => {};
   //
 
   //Return statement
@@ -108,6 +155,9 @@ const AppProvider = ({ children }) => {
         handleNoteChange,
         ref,
         clientUpdated,
+        userInSession,
+        setUserInSession,
+        // handleLogIn,
       }}
     >
       {children}
