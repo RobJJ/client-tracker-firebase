@@ -69,31 +69,36 @@ const AppProvider = ({ children }) => {
   const [updatedNotes, setUpdatedNotes] = useState("");
   const [userInSession, setUserInSession] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
+  const [clients, setClients] = useState(null);
   //
   const ref = useRef();
   const clientUpdated = useRef();
   // Functions to handle state actions -
   //
   // Auth Listerner !!
-  // useEffect(() => {
-  //   // Passing the callback to the listener - calls unsub on unmount - cleans up the function on the listener
-  //   const unsubscribe = onAuthStateChangedListener((user) => {
-  //     if (user) {
-  //       ClientDataService.createUserDocFromAuth(user);
-  //       // getAllUsersClients(user.uid);
-  //     } else {
-  //       // setClients([]);
-  //     }
-  //     console.log(user);
-  //     setCurrentUser(user);
-  //   });
-  //   return unsubscribe;
-  // }, []);
+  useEffect(() => {
+    // Passing the callback to the listener - calls unsub on unmount - cleans up the function on the listener
+    const unsubscribe = onAuthStateChangedListener((user) => {
+      if (user) {
+        ClientDataService.createUserDocFromAuth(user);
+        getAllUsersClients(user.uid);
+      } else {
+        // setClients([]);
+      }
+      console.log(user);
+      setCurrentUser(user);
+    });
+    return unsubscribe;
+  }, []);
   // To add a new Client
-  const submitNewClient = (e) => {
+  const submitNewClient = async (e) => {
     e.preventDefault();
-    dispatch({ type: "TESTING", payload: ref });
-    dispatch({ type: "SUBMIT", payload: newClientInfo });
+    // dispatch({ type: "TESTING", payload: ref });
+    // dispatch({ type: "SUBMIT", payload: newClientInfo });
+    const dateJoined = new Date().toISOString().slice(0, 10);
+
+    await ClientDataService.addClient({ ...newClientInfo, joined: dateJoined });
+    setClients([...clients, newClientInfo]);
     setNewClientInfo(clientTemplate);
   };
   // To add a receipt - debit to client
@@ -127,13 +132,18 @@ const AppProvider = ({ children }) => {
   ////////////////////////////////////////////
   // NEW METHODS MADE FOR FIREBASE INTERGRATION
   ////////////////////////////////////////////
-  // const handleLogIn = async () => {
-  //   await logGoogleUser();
-  //   setUserInSession(true);
-  // };
+  const handleLogIn = async () => {
+    await logGoogleUser();
+    setUserInSession(true);
+  };
   const handleLogOut = async () => {};
   //
-
+  const getAllUsersClients = async (userId) => {
+    const data = await ClientDataService.getAllUsersClients(userId);
+    // use the auto generaged uid and store within the doc itself
+    const clientsArr = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+    setClients(clientsArr);
+  };
   //Return statement
   return (
     <AppContext.Provider
@@ -157,7 +167,9 @@ const AppProvider = ({ children }) => {
         clientUpdated,
         userInSession,
         setUserInSession,
-        // handleLogIn,
+        handleLogIn,
+        clients,
+        setClients,
       }}
     >
       {children}
